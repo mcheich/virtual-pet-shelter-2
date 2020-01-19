@@ -3,6 +3,7 @@ package main;
 
 public class VirtualPet2 {
 
+	//private String ID = "";
 	private int hunger = 0;
 	private int thirst = 0;
 	private int boredom = 0;

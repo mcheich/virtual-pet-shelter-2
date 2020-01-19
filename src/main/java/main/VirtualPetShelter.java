@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-	private static Map<Integer, VirtualPet2> shelter = new HashMap<Integer, VirtualPet2>();
+	private Map<Integer, VirtualPet2> shelter = new HashMap<Integer, VirtualPet2>();
 	
 	public void intake(String namePara, String descriptionPara) {
 		/**
@@ -13,9 +13,6 @@ public class VirtualPetShelter {
 		 *  Value is the VirtualPet object
 		 */
 		Integer petKey = shelter.size() + 1;
-		//System.out.println(petKey);
-		
-		
 		VirtualPet2 newPet = new VirtualPet2(namePara, descriptionPara);
 		shelter.put(petKey, newPet);
 	}
@@ -25,6 +22,14 @@ public class VirtualPetShelter {
 	 */
 	public Map<Integer, VirtualPet2> getShelter() {
 		return shelter;
+	}
+
+	/**
+	 * Remove VirtualPet Object from Map
+	 * @param keyPara
+	 */
+	public void adoptOut(int keyPara) {
+		shelter.remove(keyPara);		
 	}
 
 }
