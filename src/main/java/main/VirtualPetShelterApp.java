@@ -127,7 +127,7 @@ public class VirtualPetShelterApp {
 	 * @param input
 	 */
 	private static void playWithSinglePet(VirtualPetShelter shelterPara, Scanner input) {
-		System.out.println("###########################################################\n");
+		System.out.println("######################################");
 
 		// Find the pet
 		Map<Integer, VirtualPet2> animals = shelterPara.getShelter();
@@ -161,7 +161,7 @@ public class VirtualPetShelterApp {
 	 * Prints user options to console.
 	 */
 	private static void showOptions() {
-		System.out.println("** What would you like to do with your pets? **\n");
+		System.out.println("## What would you like to do with your pets? ##\n");
 		System.out.println("1. Feed the pets\n" + "2. Water the pets\n" + "3. Play with a pet\n" + "4. Adopt a pet\n"
 				+ "5. Admit a pet\n" + "6. Quit");
 
@@ -173,14 +173,16 @@ public class VirtualPetShelterApp {
 	 * @param shelterPara
 	 */
 	private static void showRosterAndStats(VirtualPetShelter shelterPara) {
-		System.out.println("** This is the status of the pets in the shelter: **\n");
-		System.out.println("Name        |Hunger |Thirst |Boredom");
-		System.out.println("------------|-------|-------|-------");
+		System.out.println("######################################");
+		System.out.println("##         Pet Status Table         ##");
+		System.out.println("-------------------------------------");
+		System.out.println("Name        |Hunger |Thirst |Boredom ");
+		System.out.println("------------|-------|-------|--------");
 
 		Map<Integer, VirtualPet2> animals = shelterPara.getShelter();
 
 		for (Entry<Integer, VirtualPet2> animal : animals.entrySet()) {
-			System.out.println(String.format("%1$-12s|%2$-7s|%3$-7s|%4$-7s", animal.getValue().getName(),
+			System.out.println(String.format("%1$-12s|%2$-7s|%3$-7s|%4$-6s", animal.getValue().getName(),
 					animal.getValue().getHunger(), animal.getValue().getThirst(), animal.getValue().getBoredom()));
 		}
 
