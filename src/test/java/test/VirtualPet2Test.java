@@ -37,35 +37,34 @@ class VirtualPet2Test {
 
 	@Test
 	public void hungerShouldDecreaseBy1AfterEat() {
+		VirtualPet2 underTest2 = new VirtualPet2(1,0,0);
 		// Act
-		underTest.setHunger(1);
-		int beforeEat = underTest.getHunger(); // 1
-		underTest.feed();
-		int result = underTest.getHunger();
+		underTest2.feed();
+		int result = underTest2.getHunger();
 		// Assert
-		assertEquals(beforeEat - 1, result);
+		assertEquals(0, result);
 	}
 
 	@Test
 	public void thirstShouldDecreaseBy1AfterDrink() {
+		// Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(0,1,0);
 		// Act
-		underTest.setThirst(1);
-		int beforeDrink = underTest.getThirst();
-		underTest.drink();
-		int result = underTest.getThirst();
+		underTest2.drink();
+		int result = underTest2.getThirst();
 		// Assert
-		assertEquals(beforeDrink - 1, result);
+		assertEquals(0, result);
 	}
 
 	@Test
 	public void boredomShouldDecreaseBy1AfterPlay() {
+		// Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(0,0,1);
 		// Act
-		underTest.setBoredom(1);
-		int beforePlay = underTest.getBoredom();
-		underTest.play();
-		int result = underTest.getBoredom();
+		underTest2.play();
+		int result = underTest2.getBoredom();
 		// Assert
-		assertEquals(beforePlay - 1, result);
+		assertEquals(0, result);
 	}
 
 	@Test
@@ -123,6 +122,39 @@ class VirtualPet2Test {
 		int afterTick = underTest.getBoredom();
 		// Assert
 		assertEquals(beforeTick, afterTick - 1);
+	}
+	
+	@Test
+	public void tickShouldNotIncreaseHungerAbove10() {
+		//Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(10,10,10);
+		// Act
+		underTest2.tick();
+		int result = underTest2.getHunger();
+		// Assert
+		assertEquals(10, result);
+	}
+	
+	@Test
+	public void tickShouldNotIncreaseThirstAbove10() {
+		//Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(10,10,10);
+		// Act
+		underTest2.tick();
+		int result = underTest2.getThirst();
+		// Assert
+		assertEquals(10, result);
+	}
+
+	@Test
+	public void tickShouldNotIncreaseBoredomAbove10() {
+		//Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(10,10,10);
+		// Act
+		underTest2.tick();
+		int result = underTest2.getBoredom();
+		// Assert
+		assertEquals(10, result);
 	}
 
 	@Test
