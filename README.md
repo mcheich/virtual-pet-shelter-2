@@ -16,11 +16,13 @@ In retrospect, it may have been better to add a field to the VirtualPet object f
 ## Points of Confusion
 If I want to validate user data, where do I do it?  
 
-For example, I am tempted to create setters for private field values, add validation logic there.  For example, if hunger must be between 0 and 10, then any time the value hunger needs adjusted, a method would call the setHunger, and the validation would be applied.  This could include constructor - that is, the field values set in the constructor would use setHunger(value) - this could ensure any object constructed met the restrictions.  
+For example, I am tempted to create setters for private field values, and add the validation logic there.  For example, if hunger must be between 0 and 10, then any time the value hunger needs adjusted, a method would call the setHunger, and the validation logic would be applied.  This could include the constructor - that is, the field values set in the constructor would use setHunger(value) - this could ensure any object constructed met the restrictions.  
 
-I didn't go this route.  I got the inkling that setters undermined the privacy of filed class values...
+I didn't go this route.  I got the inkling that setters undermined the privacy of field values of the class...
 
-If I add the validation at the setter, could this limit the potential reuse of the class? Maybe someone wants a Virtual Pet whose hunger can go up to 100 and less than 0...  If this is the case, the upper and lower limits could also be field values of the VirtualPet and set by an overloaded constructor...but, I guess the setter could use those same field values...
+If I add the validation at the setter, could this limit the potential reuse of the class? 
+
+Maybe someone wants a VirtualPet whose hunger can go up to 100 and less than 0...  If this is the case, the upper and lower limits could also be field values of the VirtualPet and set by an overloaded constructor...but, I guess the setter could use those same field values...
 
 
 
