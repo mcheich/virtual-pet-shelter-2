@@ -79,7 +79,7 @@ public class VirtualPetShelterTest {
 		underTest.feedAll();
 		int result = underTest.getShelter().get(1).getHunger();
 		// Assert
-		assertEquals(0, result);
+		assertEquals(5, result);
 	}
 
 	@Test
@@ -92,7 +92,7 @@ public class VirtualPetShelterTest {
 		underTest.waterAll();
 		int result = underTest.getShelter().get(1).getThirst();
 		// Assert
-		assertEquals(0, result);
+		assertEquals(5, result);
 	}
 
 	@Test
@@ -105,7 +105,7 @@ public class VirtualPetShelterTest {
 		underTest.playAll();
 		int result = underTest.getShelter().get(1).getBoredom();
 		// Assert
-		assertEquals(0, result);
+		assertEquals(5, result);
 	}
 
 	@Test
@@ -117,7 +117,7 @@ public class VirtualPetShelterTest {
 		underTest.tickAll();
 		int result = underTest.getShelter().get(1).getHunger();
 		// Assert
-		assertEquals(1, result);
+		assertEquals(6, result);
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class VirtualPetShelterTest {
 		underTest.playWithPet("TestName");
 		int result = underTest.getShelter().get(1).getBoredom();
 		//Assert
-		assertEquals(0, result);
+		assertEquals(5, result);
 	}
 
 	@Test

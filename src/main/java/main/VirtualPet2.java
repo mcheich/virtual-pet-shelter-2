@@ -2,9 +2,9 @@ package main;
 
 public class VirtualPet2 {
 
-	private int hunger = 0;
-	private int thirst = 0;
-	private int boredom = 0;
+	private int hunger = 5;
+	private int thirst = 5;
+	private int boredom = 5;
 	private String name;
 	private String description;
 

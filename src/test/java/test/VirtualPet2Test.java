@@ -12,27 +12,27 @@ class VirtualPet2Test {
 	VirtualPet2 underTest = new VirtualPet2();
 
 	@Test
-	public void HungerShouldBe0AtStart() {
+	public void HungerShouldBe5AtStart() {
 		// Act
 		int result = underTest.getHunger();
 		// Assert
-		assertEquals(0, result);
+		assertEquals(5, result);
 	}
 
 	@Test
-	public void ThirstShouldBe0AtStart() {
+	public void ThirstShouldBe5AtStart() {
 		// Act
 		int result = underTest.getThirst();
 		// Assert
-		assertEquals(0, result);
+		assertEquals(5, result);
 	}
 
 	@Test
-	public void BoredomShouldBe0AtStart() {
+	public void BoredomShouldBe5AtStart() {
 		// Act
 		int result = underTest.getBoredom();
 		// Assert
-		assertEquals(0, result);
+		assertEquals(5, result);
 	}
 
 	@Test
@@ -69,27 +69,33 @@ class VirtualPet2Test {
 
 	@Test
 	public void hungerShouldNotDecreaseBelow0() {
+		// Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(0,0,0);
 		// Act
-		int result = underTest.getHunger();
-		underTest.feed();
+		int result = underTest2.getHunger();
+		underTest2.feed();
 		// Assert
 		assertEquals(0, result);
 	}
 
 	@Test
 	public void thirstShouldNotDecreaseBelow0() {
+		// Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(0,0,0);
 		// Act
-		int result = underTest.getThirst();
-		underTest.drink();
+		int result = underTest2.getThirst();
+		underTest2.drink();
 		// Assert
 		assertEquals(0, result);
 	}
 
 	@Test
 	public void boredomShouldNotDecreaseBelow0() {
+		// Arrange
+		VirtualPet2 underTest2 = new VirtualPet2(0,0,0);
 		// Act
-		underTest.play();
-		int result = underTest.getBoredom();
+		underTest2.play();
+		int result = underTest2.getBoredom();
 		// Assert
 		assertEquals(0, result);
 	}
